@@ -1,0 +1,3 @@
+# Spec-driven development lives here.
+# Each feature gets a folder: .kiro/specs/<feature>/ with
+# requirements.md, design.md and tasks.md, created with Kiro before coding.

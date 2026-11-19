@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# Editor / OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+
+# IMPORTANT (hackathon submission rule):
+# The /.kiro directory MUST be committed and MUST NOT be ignored.
+# Do not add any pattern that matches .kiro — the lines below are a
+# deliberate safety net in case a broad dotfile pattern is added later.
+!.kiro/
+!.kiro/**
