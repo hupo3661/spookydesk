@@ -1,5 +1,7 @@
 # SpookyDesk
 
+**Live demo: https://hupo3661.github.io/spookydesk/**
+
 **The productivity app that wears costumes.**
 Tasks, a focus timer and a daily planner — dressed as a haunted Halloween
 desk, with a one-click costume changer for the whole app.
@@ -7,7 +9,10 @@ desk, with a one-click costume changer for the whole app.
 Built with [Kiro](https://kiro.dev) for the **Kiroween 2026** hackathon
 (Devpost), Costume Contest category.
 
-> Status: scaffolding. Core build starts once the Kiro credits code arrives.
+> Status: feature-complete and live at the demo URL above. All four
+> features (costume engine, tasks, focus timer, today & stats) are built,
+> with synthesized sound effects for both costumes. Redeploy after changes
+> with `scripts/deploy-pages.sh`.
 
 ## What it does
 
