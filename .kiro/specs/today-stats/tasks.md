@@ -104,7 +104,7 @@ parallel.
   resets on invalid input (R-2.4, AC-2.3a–b, design §8.3). No hex or named
   colors in the CSS module.
 
-- [ ] **12.** Create `src/features/today-stats/components/StreakDisplay.tsx`
+- [x] **12.** Create `src/features/today-stats/components/StreakDisplay.tsx`
   and `StreakDisplay.module.css`. Props: `currentStreak`, `longestStreak`.
   Reads `costumeId` from `useCostume()`.
   - **haunted**: row of 10 icon elements, first
@@ -115,14 +115,14 @@ parallel.
   - Icon visuals must be CSS-only (no image imports); icon SVG data URI in
     the CSS module.
 
-- [ ] **13.** Create `src/features/today-stats/components/TodayTaskList.tsx`.
+- [x] **13.** Create `src/features/today-stats/components/TodayTaskList.tsx`.
   Props: `tasks: Task[]`. Renders `<TaskItem>` for each task from the tasks
   feature, or `<EmptyState filter="today" />` (with copy from
   `t('today.emptyState')`) when empty. No sorting. The component must be
   mounted inside `TasksProvider` (guaranteed by the router, not by this
   component). No task data is duplicated (R-1.4).
 
-- [ ] **14.** Create `src/features/today-stats/TodayPage.tsx` and
+- [x] **14.** Create `src/features/today-stats/TodayPage.tsx` and
   `components/TodayPage.module.css`. The page wrapper:
   - Derives `today = toLocalDate()`.
   - Reads `allTasks` from `TasksContext`, derives `todayTasks` via
