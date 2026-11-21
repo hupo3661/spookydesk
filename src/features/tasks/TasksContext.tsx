@@ -20,7 +20,7 @@ interface TasksContextValue {
   filteredTasks: Task[];
 }
 
-const TasksContext = createContext<TasksContextValue | null>(null);
+export const TasksContext = createContext<TasksContextValue | null>(null);
 
 function readInitialFilter(): TaskFilter {
   const value = getSetting('tasksFilter');

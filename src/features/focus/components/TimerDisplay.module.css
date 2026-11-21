@@ -1,0 +1,30 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 1rem;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  font-family: var(--font-family-base);
+}
+
+.heading {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--color-primary);
+}
+
+.countdown {
+  font-size: 3rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text);
+}
+
+.message {
+  margin: 0;
+  text-align: center;
+  color: var(--color-accent);
+}

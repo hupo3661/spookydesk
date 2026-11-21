@@ -94,7 +94,7 @@ the next unless noted as parallelisable (★).
   - All colors reference `var(--token)` exclusively. Zero hex literals.
   - _Depends on: task 5._
 
-- [ ] 11. **Implement `TimerDisplay` component**
+- [x] 11. **Implement `TimerDisplay` component**
   - Create `src/features/focus/components/TimerDisplay.tsx` and `TimerDisplay.module.css`.
   - Props: `{ fraction: number; remainingMs: number; state: TimerState }`.
   - Read `costumeId` and `t` from `useCostume()` inside the component.
@@ -108,7 +108,7 @@ the next unless noted as parallelisable (★).
 
 ## Group 4 — Controls and task binding
 
-- [ ] 12. **Implement `TimerControls` component**
+- [x] 12. **Implement `TimerControls` component**
   - Create `src/features/focus/components/TimerControls.tsx` and `TimerControls.module.css`.
   - Props: the full set of action callbacks and `state` from `UseTimerReturn`.
   - Render only the buttons valid for the current state (table in Design §6.6).
@@ -116,7 +116,7 @@ the next unless noted as parallelisable (★).
   - All CSS uses `var(--token)` references only.
   - _Depends on: tasks 5, 8._
 
-- [ ] 13. **Implement `TaskBinder` component**
+- [x] 13. **Implement `TaskBinder` component**
   - Create `src/features/focus/components/TaskBinder.tsx` and `TaskBinder.module.css`.
   - Props: `{ boundTaskId: string | null; bindTask: (id: string | null) => void; state: TimerState }`.
   - Render nothing when `state !== 'idle'`.
