@@ -141,27 +141,27 @@ parallel.
 
 ## Group G — Stats view components (depends on C, D)
 
-- [ ] **15.** Create `src/features/today-stats/components/DayColumn.tsx` and
+- [x] **15.** Create `src/features/today-stats/components/DayColumn.tsx` and
   `DayColumn.module.css`. Props: `stats: DayStats`, `maxTasks: number`,
   `maxFocus: number`. Renders two vertical bar divs with heights set via
   `--tasks-h` and `--focus-h` custom properties (inline style, design §8.8).
   Colors `var(--color-primary)` and `var(--color-accent)`. Day label from
   `Intl.DateTimeFormat`. Tooltip via `title` attribute (R-5.5).
 
-- [ ] **16.** Create `src/features/today-stats/components/WeekChart.tsx` and
+- [x] **16.** Create `src/features/today-stats/components/WeekChart.tsx` and
   `WeekChart.module.css`. Props: `weekStats: WeekStats`. Renders a flex-row
   of 7 `<DayColumn>` components with `align-items: flex-end`. Renders a
   legend strip below with `t('stats.seriesTasksLabel')` and
   `t('stats.seriesFocusLabel')` (R-5.3–5.6). Zero-value days must render a
   visible column (R-5.3).
 
-- [ ] **17.** Create `src/features/today-stats/components/LifetimeCounters.tsx`
+- [x] **17.** Create `src/features/today-stats/components/LifetimeCounters.tsx`
   and `LifetimeCounters.module.css`. Props: `monstersDefeated: number`,
   `lifetimeFocusMinutes: number`. Renders two stat blocks with copy-pack
   labels `t('stats.monstersDefeated')` and `t('stats.lifetimeFocusMinutes')`
   (R-6.3). Flex row on wide viewports, stacked on narrow via CSS `flex-wrap`.
 
-- [ ] **18.** Create `src/features/today-stats/StatsPage.tsx` and
+- [x] **18.** Create `src/features/today-stats/StatsPage.tsx` and
   `components/StatsPage.module.css`. The page wrapper reads stores directly
   (not via context — design §8.6), derives `weekStats`,
   `lifetimeFocusMinutes`, and `monstersDefeated`, and renders `<WeekChart>`
