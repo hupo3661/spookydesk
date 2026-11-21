@@ -1,0 +1,57 @@
+.page {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100%;
+  padding: 1rem;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 28rem;
+  margin: 0 auto;
+  padding: clamp(0.75rem, 4vw, 1.5rem);
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow-wrap: anywhere;
+}
+
+.heading {
+  margin: 0;
+  font-family: var(--font-family-base);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.label {
+  color: var(--color-muted);
+  font-family: var(--font-family-base);
+}
+
+.input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.75rem;
+  font-family: var(--font-family-base);
+  font-size: 1rem;
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1px solid var(--color-muted);
+  border-radius: var(--radius-card);
+}
+
+.input:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}

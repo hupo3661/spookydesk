@@ -6,12 +6,15 @@ import styles from './App.module.css';
 
 const TimerPage = lazy(() => import('./features/focus/TimerPage'));
 
+const SettingsPage = lazy(() => import('./features/settings/SettingsPage'));
+
 const DEFAULT_ROUTE = '/tasks';
 
 // Route table. Later phases register '/', '/focus' and '/stats' here.
 const ROUTES: Record<string, ComponentType> = {
   '/tasks': TasksPage,
   '/focus': TimerPage,
+  '/settings': SettingsPage,
 };
 
 function readRoute(): string {
@@ -40,6 +43,9 @@ export default function App() {
         </a>
         <a href="#/focus" className={styles.link}>
           {t('nav.focus')}
+        </a>
+        <a href="#/settings" className={styles.link}>
+          {t('nav.settings')}
         </a>
       </nav>
       <Suspense fallback={null}>
