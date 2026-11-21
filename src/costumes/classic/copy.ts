@@ -56,6 +56,9 @@ export const classicCopy: CopyPack = {
   'streak.unit': 'day streak',
   'streak.longestLabel': 'Longest streak',
 
+  // App
+  'app.title': 'Classic Desk',
+
   // Nav
   'nav.costumePicker': 'Change costume',
 };

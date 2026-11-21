@@ -58,6 +58,9 @@ export const hauntedCopy: CopyPack = {
   'streak.unit': '🎃',
   'streak.longestLabel': 'Best haunt',
 
+  // App
+  'app.title': 'SpookyDesk',
+
   // Nav
   'nav.costumePicker': 'Change costume',
 };

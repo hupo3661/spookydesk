@@ -1,0 +1,51 @@
+/*
+ * Global stylesheet.
+ * The :root block below is the ONLY place hard-coded values are allowed. It
+ * mirrors the haunted pack as a fallback so the app renders sensibly before
+ * applyCostume runs. The engine writes the real values as inline styles on
+ * <html>, which take precedence over these declarations.
+ */
+:root {
+  --color-bg: #1a0a2e;
+  --color-surface: #2d1b4e;
+  --color-text: #f0e6ff;
+  --color-primary: #ff6b35;
+  --color-accent: #7fff6b;
+  --color-muted: #a898c8;
+  --color-priority-low: #5ee6c0;
+  --color-priority-medium: #ffc247;
+  --color-priority-high: #ff4d6d;
+  --color-streak-lit: #ffa31a;
+  --color-streak-unlit: #4a3570;
+  --color-bar-bg: #3b2766;
+  --font-family-base: 'Creepster', 'Chiller', 'Papyrus', 'Trebuchet MS', system-ui, cursive;
+  --radius-card: 14px;
+  --shadow-card: 0 4px 24px #7b2fff55, 0 0 0 1px #7b2fff33;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+  line-height: 1.5;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}

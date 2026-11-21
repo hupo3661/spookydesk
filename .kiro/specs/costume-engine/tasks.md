@@ -88,7 +88,7 @@ its stated deliverable compiles cleanly and its acceptance criteria pass.
 
 ## Phase 3 — Engine core
 
-- [ ] **12. Implement `storage.ts`**
+- [x] **12. Implement `storage.ts`**
   - Create `src/engine/storage.ts`.
   - Export `getCostumeId(): CostumeId` — reads `spookydesk.settings` from
     `localStorage`, parses JSON, validates that `costumeId` is a key of
@@ -97,7 +97,7 @@ its stated deliverable compiles cleanly and its acceptance criteria pass.
     object (or starts with `{}`), sets `costumeId`, writes back.
   - _Deliverable:_ unit-testable pure-ish functions; no React imports.
 
-- [ ] **13. Implement `applyCostume.ts`**
+- [x] **13. Implement `applyCostume.ts`**
   - Create `src/engine/applyCostume.ts`.
   - Export `applyCostume(pack: CostumePack): void`:
     1. Iterate `CSS_VAR_KEYS`; for each key call
@@ -106,7 +106,7 @@ its stated deliverable compiles cleanly and its acceptance criteria pass.
   - _Deliverable:_ function applies all variables and persists in one call;
     no React dependency.
 
-- [ ] **14. Implement `CostumeContext.tsx`**
+- [x] **14. Implement `CostumeContext.tsx`**
   - Create `src/engine/CostumeContext.tsx`.
   - Define `CostumeContextValue` interface (§5 of design).
   - Create the React context with a `null` default.
@@ -115,7 +115,7 @@ its stated deliverable compiles cleanly and its acceptance criteria pass.
     Exposes `setCostume` which calls `applyCostume` then updates state.
   - _Deliverable:_ provider renders children; context value is fully typed.
 
-- [ ] **15. Implement `useCostume.ts`**
+- [x] **15. Implement `useCostume.ts`**
   - Create `src/engine/useCostume.ts`.
   - Export `useCostume()` hook:
     - Reads context (throws if used outside provider).
@@ -131,7 +131,7 @@ its stated deliverable compiles cleanly and its acceptance criteria pass.
 
 ## Phase 4 — Wiring and startup
 
-- [ ] **16. Apply costume before first render in `main.tsx`**
+- [x] **16. Apply costume before first render in `main.tsx`**
   - In `src/main.tsx` (or equivalent entry point):
     1. `import { getCostumeId } from './engine/storage'`.
     2. `import { applyCostume } from './engine/applyCostume'`.
@@ -145,7 +145,7 @@ its stated deliverable compiles cleanly and its acceptance criteria pass.
   - _Deliverable:_ opening the app in the browser shows the correct costume
     before any interaction; no FOUC on cold load.
 
-- [ ] **17. Add CSS custom property references to the global stylesheet**
+- [x] **17. Add CSS custom property references to the global stylesheet**
   - In `src/index.css` (or the app's root stylesheet), define fallback values
     for every variable in `CSS_VAR_KEYS` using `var(--key, <fallback>)` on
     the `:root` selector as documentation (the engine writes the real values

@@ -69,6 +69,8 @@ export const COPY_KEYS = [
   // Streak
   'streak.unit',
   'streak.longestLabel',
+  // App
+  'app.title',
   // Nav
   'nav.costumePicker',
 ] as const;
