@@ -158,7 +158,7 @@ its stated deliverable compiles cleanly and its acceptance criteria pass.
 
 ## Phase 5 — Verification
 
-- [ ] **18. Verify no hard-coded colors or themed strings in features**
+- [x] **18. Verify no hard-coded colors or themed strings in features**
   - Run `grep -rE '#[0-9a-fA-F]{3,8}|rgb\(' src/features/` — expect zero
     matches.
   - Run `grep -rE '"[A-Z][a-z]|"[a-z]' src/features/` and manually confirm
@@ -166,7 +166,7 @@ its stated deliverable compiles cleanly and its acceptance criteria pass.
     not change between costumes).
   - _Deliverable:_ AC-6.1 and AC-6.2 pass.
 
-- [ ] **19. Manual smoke test: costume switching**
+- [x] **19. Manual smoke test: costume switching**
   - Open the app; confirm `haunted` costume is active.
   - Switch to `classic`; confirm CSS variables update instantly, all copy
     changes, no reload.
@@ -175,7 +175,7 @@ its stated deliverable compiles cleanly and its acceptance criteria pass.
     'bad json')`); reload; confirm `haunted` loads without an error.
   - _Deliverable:_ AC-2.1, AC-2.2, AC-2.3, AC-3.1, AC-3.2 pass.
 
-- [ ] **20. Manual smoke test: sounds and missing-key safety**
+- [x] **20. Manual smoke test: sounds and missing-key safety**
   - Trigger each sound slot in `haunted` costume; confirm audio plays or is
     silently skipped (`null` slots).
   - Temporarily break an audio path; confirm only a console warning appears.
@@ -183,7 +183,7 @@ its stated deliverable compiles cleanly and its acceptance criteria pass.
     string is returned and a warning is logged.
   - _Deliverable:_ AC-4.3, AC-5.2, AC-5.3 pass.
 
-- [ ] **21. Extensibility proof**
+- [x] **21. Extensibility proof**
   - Add a stub third costume (any id, e.g. `'retro'`) by creating
     `src/costumes/retro/` with the three pack files and registering it.
   - Confirm: no component file is modified; `tsc` passes; the costume is
