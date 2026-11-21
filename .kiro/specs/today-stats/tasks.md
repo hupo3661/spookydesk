@@ -74,13 +74,13 @@ parallel.
 
 ## Group E — Integration hooks (depends on B)
 
-- [ ] **8.** Edit `src/features/tasks/TasksContext.tsx` — in `completeTask`,
+- [x] **8.** Edit `src/features/tasks/TasksContext.tsx` — in `completeTask`,
   after `incrementMonstersDefeated()` is called, import `updateStreak` from
   `../today-stats/streakStorage` and `toLocalDate` from
   `../today-stats/dateUtils`, then call `updateStreak(toLocalDate())`.
   No other logic in this file changes.
 
-- [ ] **9.** Edit `src/features/focus/useTimer.ts` — in the session-completion
+- [x] **9.** Edit `src/features/focus/useTimer.ts` — in the session-completion
   side-effect (the same point where `play('session-end')` fires and
   `appendSession({ completed: true })` is called), import and call
   `updateStreak(toLocalDate())`. No other logic in this file changes.

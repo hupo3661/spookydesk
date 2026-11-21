@@ -2,6 +2,8 @@ import { useCallback, useEffect, useReducer, useRef } from 'react';
 import { useCostume } from '../../engine/useCostume';
 import { linkSession, unlinkSession } from '../tasks/storage';
 import { appendSession } from './storage';
+import { updateStreak } from '../today-stats/streakStorage';
+import { toLocalDate } from '../today-stats/dateUtils';
 import type { TimerRecord, TimerState } from './types';
 
 // --- Timestamp helpers (Design §3.2 to §3.4) ---
@@ -233,6 +235,7 @@ export function useTimer(focusDuration: number, breakDuration: number): UseTimer
         }
       } else if (state === 'completed') {
         play('session-end');
+        updateStreak(toLocalDate());
         if (linkedRef.current && boundTaskId) unlinkSession(boundTaskId);
         linkedRef.current = false;
       } else if (state === 'idle' && (prev === 'running' || prev === 'paused')) {

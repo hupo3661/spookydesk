@@ -7,6 +7,8 @@ import {
   type TasksStore,
 } from './storage';
 import type { NewTaskDraft, Task, TaskFilter } from './types';
+import { updateStreak } from '../today-stats/streakStorage';
+import { toLocalDate } from '../today-stats/dateUtils';
 
 interface TasksContextValue {
   tasks: Task[];
@@ -108,6 +110,7 @@ export function TasksProvider({ children }: { children: ReactNode }) {
     if (!task || task.status === 'done') return;
     // Persists +1 against the stored copy; the state below mirrors it.
     incrementMonstersDefeated();
+    updateStreak(toLocalDate());
     const now = new Date().toISOString();
     commit({
       ...store,
