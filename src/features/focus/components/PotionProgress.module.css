@@ -1,0 +1,32 @@
+.root {
+  --fill-fraction: 0;
+  display: inline-block;
+  width: 10rem;
+  max-width: 100%;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.glass {
+  fill: var(--color-surface);
+  stroke: none;
+}
+
+.liquid {
+  fill: var(--color-primary);
+  /* Liquid rect is 105 units tall: fraction 1 → no offset, fraction 0 → fully hidden below. */
+  transform: translateY(calc((1 - var(--fill-fraction)) * 105px));
+  transition: transform 0.4s linear;
+}
+
+.outline {
+  fill: none;
+  stroke: var(--color-muted);
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}

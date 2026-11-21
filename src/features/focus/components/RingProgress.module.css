@@ -1,0 +1,33 @@
+.root {
+  --fill-fraction: 0;
+  display: inline-block;
+  width: 12rem;
+  max-width: 100%;
+}
+
+.svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.track,
+.progress {
+  fill: none;
+  stroke-width: 6;
+}
+
+.track {
+  stroke: var(--color-muted);
+}
+
+.progress {
+  stroke: var(--color-primary);
+  stroke-linecap: round;
+  /* Circumference of r=45: 2 * PI * 45 ≈ 282.743 */
+  stroke-dasharray: 282.743;
+  stroke-dashoffset: calc(282.743 * (1 - var(--fill-fraction, 0)));
+  transform: rotate(-90deg);
+  transform-origin: 50px 50px;
+  transition: stroke-dashoffset 0.4s linear;
+}
