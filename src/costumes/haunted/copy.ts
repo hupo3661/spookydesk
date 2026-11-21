@@ -12,6 +12,7 @@ import type { CopyPack } from '../types';
 export const hauntedCopy: CopyPack = {
   // Tasks
   'tasks.addPlaceholder': 'Summon a new monster…',
+  'tasks.addLabel': "Summon",
   'tasks.completeLabel': 'Defeat!',
   'tasks.deleteLabel': 'Banish',
   'tasks.priority.low': 'Minion',
@@ -23,6 +24,14 @@ export const hauntedCopy: CopyPack = {
   'tasks.emptyState.today': 'No monsters lurk today. Enjoy the eerie calm.',
   'tasks.emptyState.all': 'Your desk is hauntingly clear. Summon a monster above.',
   'tasks.emptyState.completed': 'No monsters defeated yet. They are getting cocky.',
+  'tasks.errorEmptyTitle': "Every monster needs a name.",
+  'tasks.deleteConfirm': "Banish forever?",
+  'tasks.editLabel': "Inspect",
+  'tasks.linkedIndicator': "Brewing…",
+  'tasks.dueDateLabel': "Haunts on",
+  'tasks.categoryLabel': "Coven",
+  'tasks.saveLabel': "Save",
+  'tasks.cancelLabel': "Retreat",
 
   // Focus
   'focus.heading': 'Brew a Potion',
@@ -63,4 +72,5 @@ export const hauntedCopy: CopyPack = {
 
   // Nav
   'nav.costumePicker': 'Change costume',
+  'nav.tasks': 'Monsters',
 };

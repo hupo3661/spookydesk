@@ -45,3 +45,22 @@ export function setCostumeId(id: CostumeId): void {
     // Storage unavailable or full: persistence is best-effort.
   }
 }
+
+/** Returns the value stored under `key` in the settings object, or undefined. */
+export function getSetting(key: string): unknown {
+  const settings = readSettings();
+  if (settings === null) return undefined;
+  return Object.prototype.hasOwnProperty.call(settings, key)
+    ? settings[key]
+    : undefined;
+}
+
+/** Merges `key: value` into the settings object, preserving other fields. Never throws. */
+export function setSetting(key: string, value: unknown): void {
+  try {
+    const next: SettingsObject = { ...(readSettings() ?? {}), [key]: value };
+    window.localStorage.setItem(SETTINGS_KEY, JSON.stringify(next));
+  } catch {
+    // Storage unavailable or full: persistence is best-effort.
+  }
+}

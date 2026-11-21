@@ -10,6 +10,7 @@ import type { CopyPack } from '../types';
 export const classicCopy: CopyPack = {
   // Tasks
   'tasks.addPlaceholder': 'Add a new task…',
+  'tasks.addLabel': "Add",
   'tasks.completeLabel': 'Complete',
   'tasks.deleteLabel': 'Delete',
   'tasks.priority.low': 'Low',
@@ -21,6 +22,14 @@ export const classicCopy: CopyPack = {
   'tasks.emptyState.today': 'Nothing scheduled for today.',
   'tasks.emptyState.all': 'No tasks yet. Add one above to get started.',
   'tasks.emptyState.completed': 'No completed tasks yet.',
+  'tasks.errorEmptyTitle': "Title is required.",
+  'tasks.deleteConfirm': "Delete for ever?",
+  'tasks.editLabel': "Edit",
+  'tasks.linkedIndicator': "In focus",
+  'tasks.dueDateLabel': "Due",
+  'tasks.categoryLabel': "Category",
+  'tasks.saveLabel': "Save",
+  'tasks.cancelLabel': "Cancel",
 
   // Focus
   'focus.heading': 'Focus',
@@ -61,4 +70,5 @@ export const classicCopy: CopyPack = {
 
   // Nav
   'nav.costumePicker': 'Change costume',
+  'nav.tasks': 'Tasks',
 };

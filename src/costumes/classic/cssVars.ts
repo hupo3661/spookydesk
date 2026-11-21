@@ -34,4 +34,8 @@ export const classicCssVars: CssVarPack = {
   // Shape
   'radius-card': '8px',
   'shadow-card': '0 1px 3px #1f293314, 0 0 0 1px #1f29330f',
+
+  // Animation
+  'anim-complete-duration': '300ms',
+  'anim-complete-shake': '0px',
 };

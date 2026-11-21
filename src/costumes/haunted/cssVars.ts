@@ -34,4 +34,8 @@ export const hauntedCssVars: CssVarPack = {
   // Shape
   'radius-card': '14px',
   'shadow-card': '0 4px 24px #7b2fff55, 0 0 0 1px #7b2fff33',
+
+  // Animation
+  'anim-complete-duration': '750ms',
+  'anim-complete-shake': '6px',
 };

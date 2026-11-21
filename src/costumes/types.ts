@@ -23,11 +23,15 @@ export const CSS_VAR_KEYS = [
   // Shape
   'radius-card',
   'shadow-card',
+  // Animation
+  'anim-complete-duration',
+  'anim-complete-shake',
 ] as const;
 
 export const COPY_KEYS = [
   // Tasks
   'tasks.addPlaceholder',
+  'tasks.addLabel',
   'tasks.completeLabel',
   'tasks.deleteLabel',
   'tasks.priority.low',
@@ -39,6 +43,14 @@ export const COPY_KEYS = [
   'tasks.emptyState.today',
   'tasks.emptyState.all',
   'tasks.emptyState.completed',
+  'tasks.errorEmptyTitle',
+  'tasks.deleteConfirm',
+  'tasks.editLabel',
+  'tasks.linkedIndicator',
+  'tasks.dueDateLabel',
+  'tasks.categoryLabel',
+  'tasks.saveLabel',
+  'tasks.cancelLabel',
   // Focus
   'focus.heading',
   'focus.startLabel',
@@ -73,6 +85,7 @@ export const COPY_KEYS = [
   'app.title',
   // Nav
   'nav.costumePicker',
+  'nav.tasks',
 ] as const;
 
 export const SOUND_KEYS = [
