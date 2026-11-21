@@ -24,6 +24,12 @@ export function CostumeProvider({
     const next = COSTUME_REGISTRY[id];
     applyCostume(next);
     setPack(next);
+    // Announce the incoming costume with its own change sound (same
+    // fire-and-forget pattern as useCostume.play).
+    const path = next.sounds['costume-change'];
+    if (path != null) {
+      new Audio(path).play().catch((e: unknown) => console.warn(e));
+    }
   };
 
   return (
