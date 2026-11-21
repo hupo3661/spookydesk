@@ -89,14 +89,14 @@ parallel.
 
 ## Group F — Today view components (depends on C, D)
 
-- [ ] **10.** Create `src/features/today-stats/components/DailyGreeting.tsx`
+- [x] **10.** Create `src/features/today-stats/components/DailyGreeting.tsx`
   and `DailyGreeting.module.css`. The component receives `today: string`
   (YYYY-MM-DD), reads `t('today.greetings.count')` for the list length, and
   renders `t('today.greetings.' + index)` where
   `index = localDateInt(new Date(today)) % count`. No greeting string may be
   hard-coded in JSX (R-7.1).
 
-- [ ] **11.** Create `src/features/today-stats/components/FocusGoalWidget.tsx`
+- [x] **11.** Create `src/features/today-stats/components/FocusGoalWidget.tsx`
   and `FocusGoalWidget.module.css`. Props: `focusMinutes`, `goal`,
   `onGoalChange`. Render a progress bar (`--progress` CSS custom property set
   via inline style on the inner div), a `{actual} / {goal} {t('today.goalUnit')}`
