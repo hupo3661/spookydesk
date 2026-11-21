@@ -50,10 +50,12 @@ export const hauntedCopy: CopyPack = {
 
   // Today
   'today.heading': "Today's Hunt",
-  'today.greetings.count': '3',
+  'today.greetings.count': '5',
   'today.greetings.0': 'The spirits await your tasks…',
   'today.greetings.1': "What lurks on today's list?",
   'today.greetings.2': 'Brew potions. Defeat evil. Repeat.',
+  'today.greetings.3': 'The haunted desk is ready.',
+  'today.greetings.4': 'Another day to defeat monsters.',
   'today.goalUnit': 'min brewed',
   'today.goalLabel': 'Daily potion goal',
   'today.emptyState': 'No monsters lurk today. Add one, if you dare.',

@@ -8,16 +8,16 @@ parallel.
 
 ## Group A — Foundation (types, date utilities, migrations)
 
-- [ ] **1.** Create `src/features/today-stats/types.ts` — define and export
+- [x] **1.** Create `src/features/today-stats/types.ts` — define and export
   `StreakStore`, `DayStats`, and `WeekStats` interfaces exactly as specified in
   design §3.
 
-- [ ] **2.** Create `src/features/today-stats/dateUtils.ts` — implement and
+- [x] **2.** Create `src/features/today-stats/dateUtils.ts` — implement and
   export `toLocalDate`, `localDateInt`, `offsetLocalDate`, and `isYesterday`
   as specified in design §4. All four functions must use local-time fields
   (`getFullYear/Month/Date`); no UTC conversions.
 
-- [ ] **3.** Create `src/features/today-stats/streakMigrations.ts` — implement
+- [x] **3.** Create `src/features/today-stats/streakMigrations.ts` — implement
   `CURRENT_STREAK_SCHEMA_VERSION = 1` and `migrateStreakStore(raw)` as
   specified in design §6.4. The `MIGRATIONS` map is empty at schema v1 and is
   ready to accept future entries.
@@ -54,12 +54,12 @@ parallel.
 
 ## Group D — Costume engine additions (depends on A)
 
-- [ ] **6.** Add the three new CSS variable tokens (`--color-streak-lit`,
+- [x] **6.** Add the three new CSS variable tokens (`--color-streak-lit`,
   `--color-streak-unlit`, `--color-bar-bg`) to `CSS_VAR_KEYS` in
   `src/costumes/types.ts` and to both costume packs (`haunted` and `classic`)
   with the values listed in design §10.1.
 
-- [ ] **7.** Add all new copy-pack keys to `COPY_KEYS` in
+- [x] **7.** Add all new copy-pack keys to `COPY_KEYS` in
   `src/costumes/types.ts` and to both costume packs with the values listed in
   design §10.2:
   - `streak.unit`, `streak.longestLabel`

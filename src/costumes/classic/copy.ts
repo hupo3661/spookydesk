@@ -48,10 +48,12 @@ export const classicCopy: CopyPack = {
 
   // Today
   'today.heading': 'Today',
-  'today.greetings.count': '3',
+  'today.greetings.count': '5',
   'today.greetings.0': 'Good to see you. Here is your day.',
   'today.greetings.1': 'What would you like to focus on today?',
   'today.greetings.2': 'One task at a time.',
+  'today.greetings.3': 'Your tasks are waiting.',
+  'today.greetings.4': 'Make today count.',
   'today.goalUnit': 'min focused',
   'today.goalLabel': 'Daily focus goal',
   'today.emptyState': 'No tasks scheduled for today. Add one to begin.',

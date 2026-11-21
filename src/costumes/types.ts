@@ -71,6 +71,8 @@ export const COPY_KEYS = [
   'today.greetings.0',
   'today.greetings.1',
   'today.greetings.2',
+  'today.greetings.3',
+  'today.greetings.4',
   'today.goalUnit',
   'today.goalLabel',
   'today.emptyState',
