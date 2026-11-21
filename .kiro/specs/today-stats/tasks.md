@@ -26,7 +26,7 @@ parallel.
 
 ## Group B — Streak store module (depends on A)
 
-- [ ] **4.** Create `src/features/today-stats/streakStorage.ts` — implement
+- [x] **4.** Create `src/features/today-stats/streakStorage.ts` — implement
   `STREAK_KEY`, `loadStreakStore`, `saveStreakStore`, and `updateStreak` as
   specified in design §6.1–6.2. `loadStreakStore` must call `migrateStreakStore`
   after parsing and return the `DEFAULT_STREAK` on any parse failure.
@@ -37,7 +37,7 @@ parallel.
 
 ## Group C — Aggregation utilities (depends on A)
 
-- [ ] **5.** Create `src/features/today-stats/aggregations.ts` — implement the
+- [x] **5.** Create `src/features/today-stats/aggregations.ts` — implement the
   four pure functions:
   - `getTodayTasks(tasks, today)` — R-1.1 filter logic (dueDate match or null
     + createdAt match).
