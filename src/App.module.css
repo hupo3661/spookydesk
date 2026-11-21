@@ -4,3 +4,14 @@
   color: var(--color-primary);
   font-family: var(--font-family-base);
 }
+
+.nav {
+  display: flex;
+  gap: 16px;
+  padding: 0 16px;
+  font-family: var(--font-family-base);
+}
+
+.link {
+  color: var(--color-accent);
+}

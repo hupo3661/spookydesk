@@ -1,0 +1,16 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 16px;
+  box-sizing: border-box;
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+}
+
+.page > * {
+  min-width: 0;
+}
