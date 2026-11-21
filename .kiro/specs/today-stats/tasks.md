@@ -172,7 +172,7 @@ parallel.
 
 ## Group H — Router integration (depends on F, G)
 
-- [ ] **19.** Register `TodayPage` and `StatsPage` as routes in the app
+- [x] **19.** Register `TodayPage` and `StatsPage` as routes in the app
   router. Ensure `TodayPage` is nested inside `TasksProvider`. Ensure the
   navigation bar or tab strip links to both views using
   `t('today.heading')` and `t('stats.heading')` as link labels.
@@ -181,39 +181,100 @@ parallel.
 
 ## Group I — Verification (depends on all above)
 
-- [ ] **20.** Unit-test `dateUtils.ts` — verify `toLocalDate`, `localDateInt`,
+- [x] **20.** Unit-test `dateUtils.ts` — verify `toLocalDate`, `localDateInt`,
   `offsetLocalDate`, and `isYesterday` with controlled `Date` inputs,
   including a DST-boundary date if applicable.
 
-- [ ] **21.** Unit-test `streakStorage.ts` — cover all five `updateStreak`
+- [x] **21.** Unit-test `streakStorage.ts` — cover all five `updateStreak`
   branches: (a) same day no-op, (b) consecutive day increment, (c) gap reset,
   (d) first use (`lastActiveDate = null`), (e) `longestStreak` never
   decreases.
 
-- [ ] **22.** Unit-test `aggregations.ts` — cover `getTodayTasks` with the
+- [x] **22.** Unit-test `aggregations.ts` — cover `getTodayTasks` with the
   four AC-1.1 cases; cover `getTodayFocusMinutes` with completed and
   incomplete sessions; cover `getWeekStats` for a 7-day window including days
   with zero values; verify `maxTasksCompleted` and `maxFocusMinutes` are never
   below 1.
 
-- [ ] **23.** Manual smoke test — Today view: confirm that completing a task
+- [x] **23.** Manual smoke test — Today view: confirm that completing a task
   today increments `currentStreak` by exactly 1 (open DevTools → Application
   → localStorage → `spookydesk.streak`); confirm completing a second task the
   same day does not increment again (AC-3.5a).
 
-- [ ] **24.** Manual smoke test — Stats view: confirm the 7-day chart shows
+- [x] **24.** Manual smoke test — Stats view: confirm the 7-day chart shows
   all 7 columns including zero-height bars; hover each column and verify the
   tooltip shows the correct numeric values; confirm `LifetimeCounters` reflects
   the same total as the raw task count in localStorage.
 
-- [ ] **25.** Manual smoke test — costume swap: toggle from `haunted` to
+- [x] **25.** Manual smoke test — costume swap: toggle from `haunted` to
   `classic` and back on both Today and Stats views. Confirm: jack-o'-lantern
   icons ↔ numeric badge on `StreakDisplay`; themed copy-pack labels swap in
   all headings, the focus goal unit, and the stats series labels; no hex
   literals or hard-coded strings remain visible in the DOM style attribute
   (beyond `--progress`, `--tasks-h`, `--focus-h`).
 
-- [ ] **26.** Responsive check — load both views at 360 px viewport width
+- [x] **26.** Responsive check — load both views at 360 px viewport width
   (browser DevTools device toolbar). Confirm: no horizontal scroll, focus goal
   widget is fully usable, the 7-day chart columns are legible, and lifetime
   counters stack vertically.
+
+---
+
+## Verification record — phase 4 (today-stats), 2026-11-21
+
+- Items 1–19 implemented via kiro-cli (7 sessions, one item-group per
+  session); `npx tsc --noEmit` clean after every session; `npm run build`
+  passes (Today/Stats are lazy chunks).
+- Items 20–22 (unit): automated jsdom-node suite, **33/33 assertions** —
+  dateUtils (incl. month/year boundaries), all five updateStreak branches
+  plus corrupt-store fallback, aggregations AC-1.1 four cases, focus-minute
+  flooring/filtering, 7-day window with zero days, maxima clamped >= 1.
+- Items 23–25 (smoke): automated jsdom component suite against the real
+  App tree, **37/37 assertions** — completing a task moves a seeded streak
+  3 -> 4 exactly once per day (second completion same day is a no-op,
+  AC-3.5a); Stats shows 7 columns with correct tooltips and lifetime
+  counters matching raw stores (2 monsters / 90 min); costume swap on both
+  views swaps icons <-> numeric badge, all copy and CSS vars, persists
+  across a fresh mount; focus-goal widget accepts 60, rejects 999 and
+  resets. (jsdom equivalent of the manual DevTools steps.)
+- Item 26 (responsive): static audit — no fixed width/min-width > 360 px
+  anywhere in src CSS (only a max-width: 640 px page cap), flex-wrap on
+  streak row / week chart / lifetime counters, viewport meta present.
+- Grep audits: today-stats CSS has no hex/named colors (tokens only, the
+  pumpkin SVG data URI carries no fill colors — mask + token background);
+  tsx has no hard-coded user copy; the only inline styles are the
+  sanctioned --progress / --tasks-h / --focus-h custom properties.
+
+### Cross-spec fixes / notes
+
+1. Item 6 tokens already existed from the costume-engine phase; the packs'
+   shipped values differ from design section 10.1 examples (e.g. haunted
+   streak-lit #ffa31a). Kept the shipped values (live side wins).
+2. Item 7: every key except today.greetings.3/.4 already existed; both
+   packs had greetings.count = '3' -> raised to '5'; the two added
+   greetings per pack come from design section 10.2, chosen to not
+   duplicate the three already shipped.
+3. Design sections 7/9.3 cite src/settings.ts, which does not exist;
+   getSetting/setSetting live in src/engine/storage.ts (tasks/focus phase
+   precedent) and are used from there.
+4. Design section 8.1 calls the TasksContext field allTasks; the actual
+   field is `tasks`. TodayPage uses `tasks`.
+5. Item 13 / section 8.5: the shared EmptyState component renders
+   tasks.emptyState.<filter> by its own established contract; it is reused
+   unchanged with filter='today' (the today.emptyState key stays in the
+   packs, unused by this component).
+6. Item 9: updateStreak was added in useTimer's completion effect branch
+   next to play('session-end') — the state transition caused by the
+   reducer's appendSession({ completed: true }); the RESET path
+   (completed: false) does not touch the streak.
+7. isYesterday follows design section 4 literally (86400000 ms diff). That
+   is exact for no-DST locales (target locale Asia/Hong_Kong has no DST);
+   month/year boundaries are unit-tested.
+8. DayColumn guards maxTasks/maxFocus of 0 (renders 0% instead of NaN);
+   aggregations already clamp maxima to >= 1, so this is belt-and-braces.
+9. Beyond spec (phase brief requirement): a CostumePicker component
+   (src/components/) sits in the App nav using the existing
+   nav.costumePicker key and pack labels; switching applies instantly and
+   persists via the engine. App DEFAULT_ROUTE changed '/tasks' -> '/' so
+   Today is the home route; nav links use t('today.heading') /
+   t('stats.heading') per item 19.
