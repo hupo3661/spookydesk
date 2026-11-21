@@ -8,7 +8,7 @@ its stated deliverable compiles cleanly and its acceptance criteria pass.
 
 ## Phase 1 — Type foundations
 
-- [ ] **1. Define canonical key arrays and pack types**
+- [x] **1. Define canonical key arrays and pack types**
   - Create `src/costumes/types.ts`.
   - Export `CSS_VAR_KEYS`, `COPY_KEYS`, `SOUND_KEYS` as `as const` arrays
     containing every key the app will use (populate with the full sets defined
@@ -19,7 +19,7 @@ its stated deliverable compiles cleanly and its acceptance criteria pass.
     `sounds` fields.
   - _Deliverable:_ `tsc --noEmit` passes on the new file.
 
-- [ ] **2. Define `CostumeId` and the registry shape**
+- [x] **2. Define `CostumeId` and the registry shape**
   - Create `src/costumes/registry.ts`.
   - Export `CostumeId = 'haunted' | 'classic'`.
   - Export `DEFAULT_COSTUME_ID: CostumeId = 'haunted'`.
@@ -31,55 +31,55 @@ its stated deliverable compiles cleanly and its acceptance criteria pass.
 
 ## Phase 2 — Costume packs
 
-- [ ] **3. Build the `haunted` CSS variable pack**
+- [x] **3. Build the `haunted` CSS variable pack**
   - Create `src/costumes/haunted/cssVars.ts`.
   - Export `hauntedCssVars: CssVarPack` with values for every key in
     `CSS_VAR_KEYS` (Halloween palette: dark purples, orange accent, spooky
     font).
   - _Deliverable:_ `tsc` rejects the file if any key is missing.
 
-- [ ] **4. Build the `haunted` copy pack**
+- [x] **4. Build the `haunted` copy pack**
   - Create `src/costumes/haunted/copy.ts`.
   - Export `hauntedCopy: CopyPack` with values for every key in `COPY_KEYS`
     (monster/potion/jack-o'-lantern flavour text).
   - _Deliverable:_ `tsc` rejects if any copy key is missing.
 
-- [ ] **5. Build the `haunted` sound pack**
+- [x] **5. Build the `haunted` sound pack**
   - Create `src/costumes/haunted/sounds.ts`.
   - Export `hauntedSounds: SoundPack` mapping every key in `SOUND_KEYS` to
     either a path string under `public/sounds/haunted/` or `null`.
   - _Deliverable:_ `tsc` rejects if any sound key is missing.
 
-- [ ] **6. Assemble the `haunted` pack**
+- [x] **6. Assemble the `haunted` pack**
   - Create `src/costumes/haunted/index.ts`.
   - Export `hauntedPack: CostumePack = { id: 'haunted', label: 'Haunted Halloween', cssVars: hauntedCssVars, copy: hauntedCopy, sounds: hauntedSounds }`.
   - _Deliverable:_ file compiles cleanly.
 
-- [ ] **7. Build the `classic` CSS variable pack**
+- [x] **7. Build the `classic` CSS variable pack**
   - Create `src/costumes/classic/cssVars.ts`.
   - Export `classicCssVars: CssVarPack` with values for every key in
     `CSS_VAR_KEYS` (calm, minimal palette: near-white bg, muted blue accent,
     system font stack).
   - _Deliverable:_ same key set as `hauntedCssVars`; `tsc` rejects mismatches.
 
-- [ ] **8. Build the `classic` copy pack**
+- [x] **8. Build the `classic` copy pack**
   - Create `src/costumes/classic/copy.ts`.
   - Export `classicCopy: CopyPack` with plain productivity-app copy for every
     key in `COPY_KEYS`.
   - _Deliverable:_ same key set as `hauntedCopy`.
 
-- [ ] **9. Build the `classic` sound pack**
+- [x] **9. Build the `classic` sound pack**
   - Create `src/costumes/classic/sounds.ts`.
   - Export `classicSounds: SoundPack`; it is acceptable for all slots to be
     `null` (the classic costume is intentionally quiet).
   - _Deliverable:_ same key set as `hauntedSounds`.
 
-- [ ] **10. Assemble the `classic` pack**
+- [x] **10. Assemble the `classic` pack**
   - Create `src/costumes/classic/index.ts`.
   - Export `classicPack: CostumePack = { id: 'classic', label: 'Classic Clean', … }`.
   - _Deliverable:_ file compiles cleanly.
 
-- [ ] **11. Register both packs**
+- [x] **11. Register both packs**
   - Update `src/costumes/registry.ts`: import `hauntedPack` and `classicPack`,
     assign them to `COSTUME_REGISTRY`.
   - _Deliverable:_ `tsc` passes; registry is complete with two entries.
