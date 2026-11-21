@@ -40,7 +40,12 @@ export const hauntedCopy: CopyPack = {
   'focus.resumeLabel': 'Resume brew',
   'focus.resetLabel': 'Discard brew',
   'focus.startBreakLabel': 'Take a haunted rest',
-  'focus.completedMessage': 'Potion complete! 🧪 Bottle it and rest your bones.',
+  'focus.completedMessage': 'Potion complete! 🧪',
+  'focus.breakHeading': 'Rest in peace…',
+  'focus.taskBinderLabel': 'Brew for monster',
+  'focus.taskBinderNone': 'No monster',
+  'focus.settingsFocusLabel': 'Brew time (min)',
+  'focus.settingsBreakLabel': 'Rest time (min)',
   'focus.sessionUnit': 'brew',
 
   // Today
@@ -73,4 +78,6 @@ export const hauntedCopy: CopyPack = {
   // Nav
   'nav.costumePicker': 'Change costume',
   'nav.tasks': 'Monsters',
+  'nav.focus': 'Brew',
+  'nav.settings': 'Settings',
 };

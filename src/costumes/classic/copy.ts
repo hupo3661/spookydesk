@@ -32,13 +32,18 @@ export const classicCopy: CopyPack = {
   'tasks.cancelLabel': "Cancel",
 
   // Focus
-  'focus.heading': 'Focus',
-  'focus.startLabel': 'Start session',
+  'focus.heading': 'Focus Session',
+  'focus.startLabel': 'Start focus',
   'focus.pauseLabel': 'Pause',
   'focus.resumeLabel': 'Resume',
   'focus.resetLabel': 'Reset',
   'focus.startBreakLabel': 'Start break',
-  'focus.completedMessage': 'Session complete. Take a short break.',
+  'focus.completedMessage': 'Session complete!',
+  'focus.breakHeading': 'Break',
+  'focus.taskBinderLabel': 'Focus on task',
+  'focus.taskBinderNone': 'No task',
+  'focus.settingsFocusLabel': 'Focus duration (min)',
+  'focus.settingsBreakLabel': 'Break duration (min)',
   'focus.sessionUnit': 'session',
 
   // Today
@@ -71,4 +76,6 @@ export const classicCopy: CopyPack = {
   // Nav
   'nav.costumePicker': 'Change costume',
   'nav.tasks': 'Tasks',
+  'nav.focus': 'Focus',
+  'nav.settings': 'Settings',
 };

@@ -59,6 +59,11 @@ export const COPY_KEYS = [
   'focus.resetLabel',
   'focus.startBreakLabel',
   'focus.completedMessage',
+  'focus.breakHeading',
+  'focus.taskBinderLabel',
+  'focus.taskBinderNone',
+  'focus.settingsFocusLabel',
+  'focus.settingsBreakLabel',
   'focus.sessionUnit',
   // Today
   'today.heading',
@@ -86,6 +91,8 @@ export const COPY_KEYS = [
   // Nav
   'nav.costumePicker',
   'nav.tasks',
+  'nav.focus',
+  'nav.settings',
 ] as const;
 
 export const SOUND_KEYS = [
